@@ -4,8 +4,8 @@ export const personal = {
   roles: ["AI Engineer", "Machine Learning Engineer", "Deep Learning Specialist", "Software Developer"],
   location: "Ernakulam, Kerala",
   email: "merinjmaippan@gmail.com",
-  linkedin: "https://linkedin.com/in/merin-johny",
-  github: "https://github.com/merinjohny",
+  linkedin: "https://www.linkedin.com/in/merin--johny/",
+  github: "https://github.com/MerinJohnymaippan",
   heroSummary:
     "Hello! I'm Merin Johny, a Computer Science and Engineering graduate specializing in Artificial Intelligence, with a strong passion for building intelligent, user-focused software solutions. I enjoy combining software development, machine learning, and problem-solving to create applications that address real-world challenges.",
   aboutSummary:
