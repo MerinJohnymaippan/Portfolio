@@ -10,17 +10,10 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY || 'c630addf-3060-4117-be3b-81674c321632';
 
     if (!accessKey) {
-      // Fallback directly to mailto if no Web3Forms key is configured
-      const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-      )}`;
-      window.location.href = mailtoUrl;
-      setSent(true);
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSent(false), 4000);
+      alert('Web3Forms access key is not configured.');
       return;
     }
 
@@ -52,14 +45,7 @@ export default function Contact() {
       }
     } catch (error) {
       console.error(error);
-      alert('An error occurred. Falling back to email client...');
-      const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-      )}`;
-      window.location.href = mailtoUrl;
-      setSent(true);
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSent(false), 4000);
+      alert('An error occurred while sending your message. Please try again later.');
     } finally {
       setLoading(false);
     }
