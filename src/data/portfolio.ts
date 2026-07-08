@@ -12,8 +12,8 @@ export const personal = {
     `My experience includes developing AI-powered applications, full-stack web projects, and data-driven solutions using technologies such as Python, Java, JavaScript, TensorFlow, PyTorch, SQL, HTML, CSS, and modern development frameworks. I am passionate about continuously learning emerging technologies, writing clean and maintainable code, and collaborating effectively within teams to deliver impactful solutions.
 
 I am particularly interested in Artificial Intelligence, Machine Learning, Generative AI, Full-Stack Development, and Software Engineering. I enjoy taking projects from concept to deployment, always striving to create scalable, efficient, and intuitive applications.`,
-  photo: "/merin_johny_photo.jpeg",
-  resumePDF: "/Merin_Johny_AI_Engr_I.pdf",
+  photo: "merin_johny_photo.jpeg",
+  resumePDF: "Merin_Johny_AI_Engr_I.pdf",
 };
 
 export const stats = [
