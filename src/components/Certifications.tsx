@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { certifications } from '../data/portfolio';
 
 export default function Certifications() {
@@ -34,15 +34,7 @@ export default function Certifications() {
               <h3 className="font-bold text-base mb-1 leading-tight">{cert.title}</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>{cert.organization}</p>
 
-              <a
-                href={cert.credentialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-2"
-                style={{ color: 'var(--primary)' }}
-              >
-                <Award size={14} /> View Credential <ExternalLink size={12} />
-              </a>
+
             </div>
           ))}
         </div>

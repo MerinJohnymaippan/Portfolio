@@ -7,22 +7,62 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    )}`;
     
-    window.location.href = mailtoUrl;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
 
-    setTimeout(() => {
-      setLoading(false);
+    if (!accessKey) {
+      // Fallback directly to mailto if no Web3Forms key is configured
+      const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+      )}`;
+      window.location.href = mailtoUrl;
       setSent(true);
       setForm({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSent(false), 4000);
-    }, 800);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+          from_name: 'Portfolio Contact Form',
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+        setForm({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        alert('Submission failed: ' + result.message);
+      }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred. Falling back to email client...');
+      const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+      )}`;
+      window.location.href = mailtoUrl;
+      setSent(true);
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSent(false), 4000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
