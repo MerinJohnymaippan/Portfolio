@@ -351,6 +351,12 @@ export const achievements = [
     icon: "star",
   },
   {
+    title: "Presented VirtuTeach at ICTEST-2026",
+    description: "Presented research paper at the 3rd International Conference on Trends in Engineering Systems and Technologies in association with IEEE Kerala Section",
+    category: "Research",
+    icon: "mic",
+  },
+  {
     title: "Presented DriverGuard at ICIMRBE 2025",
     description: "International Conference on Innovations in Mechanical, Robotics, Computing, and Biomedical Engineering, Adi Shankara Institute, April 2025",
     category: "Research",
@@ -381,4 +387,50 @@ export const achievements = [
     icon: "users",
   },
 ];
+
+export const publications = [
+  {
+    title: "VirtuTeach: Bridging Conversational Intelligence and Immersive Learning Through a Retrieval-Augmented, Avatar-Driven AI Tutoring Platform",
+    conference: "3rd International Conference on Trends in Engineering Systems and Technologies (ICTEST-2026) in association with IEEE Kerala Section",
+    date: "2026",
+    description: "Our research presents VirtuTeach, an AI-powered tutoring platform that delivers adaptive and immersive learning experiences by integrating conversational intelligence with multimodal interaction.",
+    authors: [
+      "Dr. Amrutha Muralidharan Nair",
+      "Remya Raveendran",
+      "Jovita Joy",
+      "Krishnaja T N",
+      "Lakshmi Balan",
+      "Merin Johny"
+    ],
+    highlights: [
+      "Large Language Models (LLMs)",
+      "Retrieval-Augmented Generation (RAG)",
+      "Interactive 3D Avatar-Based Learning",
+      "Real-Time Voice Interaction",
+      "Agentic AI for personalized & context-aware learning"
+    ],
+    outcome: "Overall accuracy of 94.6%, with the RAG-based knowledge retrieval module achieving 95.1% accuracy.",
+    paperUrl: null,
+  },
+  {
+    title: "DriverGuard: Real-Time Driver Monitoring System",
+    conference: "International Conference on Innovations in Mechanical, Robotics, Computing, and Biomedical Engineering (ICIMRBE 2025) at Adi Shankara Institute",
+    date: "April 2025",
+    description: "A real-time driver monitoring system leveraging OpenCV and YOLO for drowsiness and distraction detection to prevent accidents and improve vehicle safety.",
+    authors: [
+      "Merin Johny",
+      "Co-authors"
+    ],
+    highlights: [
+      "Python & OpenCV",
+      "YOLO Object Detection",
+      "PyTorch Model Training",
+      "Real-Time Drowsiness Detection",
+      "Distraction Monitoring"
+    ],
+    outcome: "Presented at ICIMRBE 2025 International Conference.",
+    paperUrl: null,
+  }
+];
+
 

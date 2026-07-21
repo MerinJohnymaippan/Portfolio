@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Download, FolderOpen, Mail, Linkedin, Github, Mail as Email, Code2, Brain } from 'lucide-react';
+import { Download, FolderOpen, Mail, Linkedin, Github, Mail as Email, Brain } from 'lucide-react';
 import { personal } from '../data/portfolio';
 import { useTyping } from '../hooks/useTyping';
 

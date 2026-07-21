@@ -20,7 +20,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
 export default function About() {
   const highlights = [
     { icon: GraduationCap, title: 'Education', text: 'B.Tech CSE (AI) — CGPA 9.27' },
-    { icon: Briefcase, title: 'Experience', text: 'AI Engineer I + 2 internships' },
+    { icon: Briefcase, title: 'Experience', text: '2 Internship Experiences' },
     { icon: Award, title: 'Achievements', text: 'International conference presenter' },
     { icon: Target, title: 'Objective', text: 'Build production-grade AI systems' },
   ];
